@@ -3,11 +3,11 @@ df=read.table('http://data.bris.ac.uk/datasets/swyt56qr4vaj17op9cw3sag7d/Lskyeta
                header=TRUE,sep=',')
 head(df)
 # R code
-df=subset(df,age>min_age&age<max_age)
 max_age=120
 min_age=18
 stopifnot(max(df$age)<max_age)
 stopifnot(min(df$age)>min_age)
+df=subset(df,age>min_age&age<max_age)
 # R code
 lm.result=lm(conspiracist_avg~age,data=df)
 summary(lm.result)
